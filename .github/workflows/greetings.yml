@@ -1,0 +1,12 @@
+name: "Issue Greeter"
+on: [issues,fork,pull_request]
+
+jobs:
+  issue-greeter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Greeter"
+        uses: anishanne/greeter@V1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          message: "![Welcome to Github](cdn.anishdoes.dev/githubdark.png)\nHey @{user}! Welcome to the **Craftlog** repo on **BetaOverflow**."
